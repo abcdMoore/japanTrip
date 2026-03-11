@@ -36,6 +36,7 @@
 - Kappabashi Kitchen Town — plan 2 hrs (knives, ceramics, cast iron, plastic food) [35.7106,139.7948]
 - Kama-asa knife shop — serious chef knives at trade prices [35.7088,139.7944]
 - Sumida River walk — first cherry blossom buds possible here [35.7104,139.8015]
+- Tanuki Street (Tanuki-dori) — tiny alley off Orange Street with 11 tanuki statues on lamp posts, each granting a different wish; rub their bellies for luck. Hidden gem, almost no tourists. Free. [35.7133,139.7946]
 
 ### transit: train + walk | ~20 min
 1. Yamanote Line → Ueno (1 stop, 3 min, IC card)
@@ -156,6 +157,7 @@
 - Uraharajuku backstreets — independent boutiques, no Takeshita crowds
 - Meiji Shrine — forested escape, genuinely peaceful (free, open until sunset) [35.6763,139.6993]
 - Tokyu Hands Shibuya — unusual practical gifts + stationery
+- Dulton Japan — vintage-industrial housewares, tools, kitchen goods; design-forward and less touristy than Kappabashi. Jinnan 1-4-8, 5 min walk from Shibuya Station toward Harajuku. [35.6620,139.6975]
 
 ### transit: train | ~3 min
 1. Nakameguro → Shibuya: Tokyu Toyoko Line (1 stop, 3 min, IC card)
