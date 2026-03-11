@@ -368,6 +368,7 @@ function MapContent({ stop, stops, dayMode, cc, homeBase, stepRoutes, userLocati
             <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
               <a
                 href={`maps://maps.apple.com/?ll=${loc.coords[0]},${loc.coords[1]}&q=${encodeURIComponent(loc.text)}`}
+                onClick={e => e.stopPropagation()}
                 style={{
                   fontSize: "11px", color: "#6aaae8", textDecoration: "none",
                   padding: "3px 8px", border: "1px solid rgba(74,144,226,0.35)",
@@ -393,6 +394,7 @@ function MapContent({ stop, stops, dayMode, cc, homeBase, stepRoutes, userLocati
             </div>
             <a
               href={`maps://maps.apple.com/?ll=${stop.coords[0]},${stop.coords[1]}&q=${encodeURIComponent(stop.area)}`}
+              onClick={e => e.stopPropagation()}
               style={{
                 fontSize: "11px", color: "#6aaae8", textDecoration: "none",
                 padding: "3px 8px", border: "1px solid rgba(74,144,226,0.35)",
@@ -749,6 +751,7 @@ export default function JapanGuide() {
             {stop.coords && (
               <a
                 href={`maps://maps.apple.com/?daddr=${stop.coords[0]},${stop.coords[1]}&dirflg=w`}
+                onClick={e => e.stopPropagation()}
                 style={{
                   display: "flex", alignItems: "center", gap: "4px",
                   padding: "7px 11px", borderRadius: "9px", flexShrink: 0,
