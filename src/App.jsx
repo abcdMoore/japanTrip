@@ -13,8 +13,11 @@ import tripData from "./trip-data.md?raw";
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 const HOME_BASES = {
-  Tokyo: { coords: [35.6330, 139.7157], label: "Meguro — Hotel" },
-  Osaka: { coords: [34.6637, 135.5008], label: "Namba — Hotel"  },
+  Tokyo:  { coords: [35.6330, 139.7157], label: "Meguro — Hotel" },
+  Osaka:  { coords: [34.6637, 135.5008], label: "Namba — Hotel"  },
+  Hakone: { coords: [35.2441, 139.1046], label: "Hakone-Yumoto Station" },
+  Kyoto:  { coords: [34.9858, 135.7588], label: "Kyoto Station" },
+  Nara:   { coords: [34.6853, 135.8326], label: "JR Nara Station" },
 };
 const CITY_COLORS = {
   Tokyo:  { bg:"rgba(244,184,196,0.12)", accent:"#f4b8c4", text:"#f9d0da", dim:"rgba(244,184,196,0.4)"  },
@@ -367,7 +370,7 @@ function MapContent({ stop, stops, dayMode, cc, homeBase, stepRoutes, userLocati
             </div>
             <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
               <a
-                href={`https://maps.apple.com/?ll=${loc.coords[0]},${loc.coords[1]}&q=${encodeURIComponent(loc.text)}`}
+                href={`https://maps.apple.com/?saddr=${homeBase?.coords[0] ?? loc.coords[0]},${homeBase?.coords[1] ?? loc.coords[1]}&daddr=${loc.coords[0]},${loc.coords[1]}&dirflg=w`}
                 onClick={e => e.stopPropagation()}
                 style={{
                   fontSize: "11px", color: "#6aaae8", textDecoration: "none",
@@ -393,7 +396,7 @@ function MapContent({ stop, stops, dayMode, cc, homeBase, stepRoutes, userLocati
               {stop.area}
             </div>
             <a
-              href={`https://maps.apple.com/?ll=${stop.coords[0]},${stop.coords[1]}&q=${encodeURIComponent(stop.area)}`}
+              href={`https://maps.apple.com/?saddr=${homeBase?.coords[0] ?? stop.coords[0]},${homeBase?.coords[1] ?? stop.coords[1]}&daddr=${stop.coords[0]},${stop.coords[1]}&dirflg=w`}
               onClick={e => e.stopPropagation()}
               style={{
                 fontSize: "11px", color: "#6aaae8", textDecoration: "none",
@@ -750,7 +753,7 @@ export default function JapanGuide() {
             </div>
             {stop.coords && (
               <a
-                href={`https://maps.apple.com/?saddr=My+Location&daddr=${stop.coords[0]},${stop.coords[1]}&dirflg=w`}
+                href={`https://maps.apple.com/?saddr=${homeBase?.coords[0] ?? stop.coords[0]},${homeBase?.coords[1] ?? stop.coords[1]}&daddr=${stop.coords[0]},${stop.coords[1]}&dirflg=w`}
                 onClick={e => e.stopPropagation()}
                 style={{
                   display: "flex", alignItems: "center", gap: "4px",
