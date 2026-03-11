@@ -487,7 +487,7 @@ function StopMap({ stop, stops, dayMode, cc, homeBase, stepRoutes, userLocation,
         tap={true} attributionControl={false}
       >
         <MapRefCapture mapRef={mapRef} />
-        <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" />
+        <TileLayer url={`https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=${import.meta.env.VITE_STADIA_KEY}`} />
         <MapController target={target} />
         <MapContent
           stop={stop} stops={stops} dayMode={dayMode} cc={cc}
@@ -522,7 +522,7 @@ function StopMap({ stop, stops, dayMode, cc, homeBase, stepRoutes, userLocation,
         position: "absolute", bottom: "3px", right: "6px", fontSize: "8px",
         color: "rgba(255,255,255,0.13)", fontFamily: "system-ui", pointerEvents: "none",
       }}>
-        © OpenStreetMap · CartoDB
+        © OpenStreetMap · Stadia Maps
       </div>
     </div>
   );

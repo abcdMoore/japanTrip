@@ -14,26 +14,13 @@ export default defineConfig({
         // Runtime cache map tiles — CacheFirst, 500 tiles, 30-day expiry
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/[a-z]\.basemaps\.cartocdn\.com\/.*/i,
+            urlPattern: /^https:\/\/tiles\.stadiamaps\.com\/.*/i,
             handler: 'CacheFirst',
             options: {
               cacheName: 'map-tiles',
               expiration: {
                 maxEntries: 500,
                 maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
-              },
-              cacheableResponse: { statuses: [0, 200] },
-            },
-          },
-          // Also catch the {s} pattern (a/b/c subdomains)
-          {
-            urlPattern: /^https:\/\/.*\.basemaps\.cartocdn\.com\/.*/i,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'map-tiles',
-              expiration: {
-                maxEntries: 500,
-                maxAgeSeconds: 30 * 24 * 60 * 60,
               },
               cacheableResponse: { statuses: [0, 200] },
             },
