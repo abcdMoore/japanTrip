@@ -1,0 +1,50 @@
+/* ── Reset & base ────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root { color-scheme: dark; }
+
+body {
+  background: #0e0e0e;
+  color: #e8e0d8;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+/* ── GPS pulsing ring animation ─────────────────────────────────────────────── */
+/* Referenced by the divIcon HTML string in UserLocationMarker */
+@keyframes pulse-gps {
+  0%   { opacity: 0.75; transform: translate(-50%, -50%) scale(1);   }
+  100% { opacity: 0;    transform: translate(-50%, -50%) scale(3.5); }
+}
+
+/* ── Leaflet overrides ───────────────────────────────────────────────────────── */
+/* Hide default zoom controls — they overlap the Near Me button on small screens */
+.leaflet-control-zoom { display: none; }
+
+/* Prevent Leaflet popup close button from being huge on mobile */
+.leaflet-popup-close-button {
+  width: 24px !important;
+  height: 24px !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+}
+
+/* Popup body */
+.leaflet-popup-content {
+  margin: 10px 12px !important;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Dark popup style */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #1a1a2e !important;
+  color: #c8d4e8 !important;
+  border: 1px solid #2a3a5a !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.7) !important;
+  border-radius: 10px !important;
+}
+
+/* ── Scrollbar hide ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
